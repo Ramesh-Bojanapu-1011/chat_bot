@@ -1,20 +1,21 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { NextPage } from "next";
-import Head from "next/head";
-import React from "react";
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
+import React from 'react';
 
 const HomePage: NextPage = () => {
   const [data, setData] = React.useState({
-    name: "Enter Name",
+    name: 'Enter Name',
   } as { name: string });
-  const [name, setName] = React.useState("");
+  const [name, setName] = React.useState('');
 
   React.useEffect(() => {
-    fetch("/api/hello", {
-      method: "POST",
+    fetch('/api/hello', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({ name }),
     })
@@ -24,7 +25,7 @@ const HomePage: NextPage = () => {
         setData(data);
       })
       .catch((error) => {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       });
   }, []);
   return (
@@ -41,14 +42,14 @@ const HomePage: NextPage = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
           onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
-            if (e.key == "Enter") {
+            if (e.key == 'Enter') {
               e.preventDefault();
               const inputValue = e.currentTarget.value;
               if (inputValue) {
-                fetch("/api/hello", {
-                  method: "POST",
+                fetch('/api/hello', {
+                  method: 'POST',
                   headers: {
-                    "Content-Type": "application/json",
+                    'Content-Type': 'application/json',
                   },
                   body: JSON.stringify({ name: inputValue }),
                 })
@@ -58,15 +59,19 @@ const HomePage: NextPage = () => {
                     setData(data);
                   })
                   .catch((error) => {
-                    console.error("Error fetching data:", error);
+                    console.error('Error fetching data:', error);
                   });
               }
-              setName("");
+              setName('');
             }
           }}
         />
         <Button>Outline</Button>
-        {data && <div className="text-2xl font-bold">{data.name}</div>}
+        {data && (
+          <div className="text-2xl font-bold">
+            <Link href={'/chatbot'}>{data.name}</Link>
+          </div>
+        )}
       </div>
     </>
   );
