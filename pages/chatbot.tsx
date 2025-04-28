@@ -1,8 +1,7 @@
 import ChatLeftsideBar from '@/components/Chat_Components/ChatLeftsideBar';
-import { Card } from '@/components/ui/card';
+import ChatRightside from '@/components/Chat_Components/ChatRightside';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import React from 'react';
 
 const ChatBotPage: NextPage = () => {
   return (
@@ -11,8 +10,9 @@ const ChatBotPage: NextPage = () => {
         <title>ChatBotPage</title>
       </Head>
       <>
-        <div>
+        <div className="flex">
           <ChatLeftsideBar />
+          <ChatRightside />
         </div>
       </>
     </>
