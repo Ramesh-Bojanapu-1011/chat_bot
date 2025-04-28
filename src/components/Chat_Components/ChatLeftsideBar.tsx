@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from '../ui/card';
-import { LucideArchiveX, PlusCircle, RecycleIcon, RemoveFormatting } from 'lucide-react';
+import { LucideArchiveX, PlusCircle } from 'lucide-react';
 import { Button } from '../ui/button';
 
 type Props = {};
@@ -28,7 +28,7 @@ const ChatLeftsideBar = (props: Props) => {
         <div className="flex border-3 border-border items-center rounded-2xl   justify-between mx-auto px-3   p-2 w-full">
           <h1 className="caret-transparent"> New Chat </h1>
           <Button variant={'ghost'} onClick={() => handleNewChat()}>
-            <PlusCircle className=' size-5' />
+            <PlusCircle className=" size-5" />
           </Button>
         </div>
 
@@ -48,7 +48,7 @@ const ChatLeftsideBar = (props: Props) => {
         <div className="flex rounded-2xl justify-between mx-auto px-3 items-center   p-2 w-full">
           <h1 className="caret-transparent"> Clear all chat </h1>
           <Button variant={'ghost'} onClick={() => handleClearAll()}>
-            <LucideArchiveX className=' size-5'/>
+            <LucideArchiveX className=" size-5" />
           </Button>
         </div>
       </Card>
