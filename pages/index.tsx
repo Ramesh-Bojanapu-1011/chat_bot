@@ -1,3 +1,4 @@
+import { ModeToggle } from '@/components/mode-toggle';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { NextPage } from 'next';
@@ -34,6 +35,7 @@ const HomePage: NextPage = () => {
         <title>Create Next App</title>
       </Head>
       <div className="flex flex-col items-center justify-center min-h-screen py-2 gap-14">
+        <ModeToggle />
         <h1 className="text-3xl font-bold underline">Hello world!</h1>
         <Input
           type="text"
