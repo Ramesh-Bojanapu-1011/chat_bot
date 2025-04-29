@@ -10,7 +10,7 @@ const HomePage: NextPage = () => {
   const [data, setData] = React.useState({
     name: 'Enter Name',
   } as { name: string });
-  const [name, setName] = React.useState('');
+  const [name, setName] = React.useState('Name');
 
   React.useEffect(() => {
     fetch('/api/hello', {
